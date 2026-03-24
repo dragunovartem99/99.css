@@ -184,7 +184,7 @@ input[type="reset"].default:not(:disabled):active {
   box-shadow: var(--default-button-border-sunken-outer), var(--default-button-border-sunken-inner);
 }
 
-@media (not(hover)) {
+@media (hover: none) {
   button:not(:disabled):hover,
   input[type="submit"]:not(:disabled):hover,
   input[type="reset"]:not(:disabled):hover {
