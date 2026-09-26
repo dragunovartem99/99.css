@@ -1,0 +1,116 @@
+input[type="range"] {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	background: transparent;
+	--track-shadow:
+		var(--b1) 0 0 white,
+		var(--b1) var(--b1) 0 white,
+		0 var(--b1) 0 white,
+		calc(-1 * var(--b1)) 0 0 darkgrey,
+		calc(-1 * var(--b1)) calc(-1 * var(--b1)) 0 darkgrey,
+		0 calc(-1 * var(--b1)) 0 darkgrey,
+		calc(-1 * var(--b1)) var(--b1) 0 white,
+		var(--b1) calc(-1 * var(--b1)) darkgrey;
+	--thumb-transform: translateY(calc(-8 * var(--px)));
+	--moz-thumb-transform: translateY(calc(2 * var(--px)));
+}
+
+input[type="range"].has-box-indicator {
+	--thumb-transform: translateY(calc(-10 * var(--px)));
+	--moz-thumb-transform: translateY(0);
+}
+
+input[type="range"]:focus {
+	outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: calc(11 * var(--px));
+	height: calc(21 * var(--px));
+	border: none;
+	box-shadow: none;
+	background: url("./icon/indicator-horizontal.svg") center / 100% no-repeat;
+	transform: var(--thumb-transform);
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: calc(11 * var(--px));
+	height: calc(21 * var(--px));
+	border: 0;
+	border-radius: 0;
+	background: url("./icon/indicator-horizontal.svg") center / 100% no-repeat;
+	transform: var(--moz-thumb-transform);
+}
+
+/* Separate rules: a list mixing vendor pseudo-elements is dropped entirely */
+input[type="range"].has-box-indicator::-webkit-slider-thumb {
+	background-image: url("./icon/indicator-rectangle-horizontal.svg");
+}
+
+input[type="range"].has-box-indicator::-moz-range-thumb {
+	background-image: url("./icon/indicator-rectangle-horizontal.svg");
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	box-sizing: border-box;
+	width: 100%;
+	height: var(--b2);
+	background: black;
+	border-right: var(--b1) solid grey;
+	border-bottom: var(--b1) solid grey;
+	box-shadow: var(--track-shadow);
+}
+
+input[type="range"]::-moz-range-track {
+	box-sizing: border-box;
+	width: 100%;
+	height: var(--b2);
+	background: black;
+	border-right: var(--b1) solid grey;
+	border-bottom: var(--b1) solid grey;
+	box-shadow: var(--track-shadow);
+}
+
+.is-vertical {
+	display: inline-block;
+	width: calc(4 * var(--px));
+	height: calc(150 * var(--px));
+	transform: translateY(50%);
+}
+
+.is-vertical > input[type="range"] {
+	width: calc(150 * var(--px));
+	height: calc(4 * var(--px));
+	margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0 var(--range-spacing);
+	transform-origin: left;
+	transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
+	--track-shadow:
+		calc(-1 * var(--b1)) 0 0 white,
+		calc(-1 * var(--b1)) var(--b1) 0 white,
+		0 var(--b1) 0 white,
+		var(--b1) 0 0 darkgrey,
+		var(--b1) calc(-1 * var(--b1)) 0 darkgrey,
+		0 calc(-1 * var(--b1)) 0 darkgrey,
+		var(--b1) var(--b1) 0 white,
+		calc(-1 * var(--b1)) calc(-1 * var(--b1)) darkgrey;
+}
+
+.is-vertical > input[type="range"]::-webkit-slider-runnable-track {
+	border-left: var(--b1) solid grey;
+	border-right: 0;
+}
+
+.is-vertical > input[type="range"]::-moz-range-track {
+	border-left: var(--b1) solid grey;
+	border-right: 0;
+}
+
+.is-vertical > input[type="range"]::-webkit-slider-thumb {
+	transform: var(--thumb-transform) scaleX(-1);
+}
+
+.is-vertical > input[type="range"]::-moz-range-thumb {
+	transform: var(--moz-thumb-transform) scaleX(-1);
+}

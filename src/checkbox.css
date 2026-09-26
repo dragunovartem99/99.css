@@ -1,0 +1,51 @@
+input[type="checkbox"] {
+	appearance: none;
+	margin: 0;
+	background: 0;
+	position: fixed;
+	opacity: 0;
+	border: none;
+}
+
+input[type="checkbox"] + label {
+	position: relative;
+	margin-left: calc(var(--checkbox-width) + var(--radio-label-spacing));
+	line-height: calc(13 * var(--px));
+}
+
+input[type="checkbox"] + label::before {
+	content: "";
+	position: absolute;
+	left: calc(-1 * (var(--checkbox-width) + var(--radio-label-spacing)));
+	display: inline-block;
+	width: var(--checkbox-width);
+	height: var(--checkbox-width);
+	background: var(--button-highlight);
+	box-shadow: var(--border-field);
+}
+
+input[type="checkbox"]:active + label::before,
+input[type="checkbox"][disabled] + label::before {
+	background: var(--surface);
+}
+
+input[type="checkbox"]:checked + label::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: calc(
+		-1 * (var(--checkbox-width) + var(--radio-label-spacing)) +
+			(var(--checkbox-width) - var(--checkmark-width)) / 2
+	);
+	width: var(--checkmark-width);
+	height: var(--checkmark-width);
+	background: url("./icon/checkmark.svg") center / 100% no-repeat;
+}
+
+input[type="checkbox"][disabled]:checked + label::after {
+	background-image: url("./icon/checkmark-disabled.svg");
+}
+
+input[type="checkbox"]:focus + label {
+	outline: var(--border-width) dotted #000000;
+}

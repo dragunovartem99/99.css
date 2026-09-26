@@ -1,76 +1,61 @@
-## 98.css
+# 99.css
 
-<a href="https://npm.im/98.css"><img height="29" alt="npm" src="https://98badges.now.sh/api/version" /></a>
-<a href="https://unpkg.com/98.css"><img height="29" alt="gzip size" src="https://98badges.now.sh/api/size" /></a>
+[98.css](https://github.com/jdan/98.css), rebuilt to be modular and scalable.
 
-A design system for building faithful recreations of old UIs.
+- **Modular**: each component is its own CSS file, import only what you use.
+- **Scalable**: every size derives from `--scale`, bevel lines snap to whole pixels.
+- **No build step**: plain CSS with relative `url()`s, works with any bundler or a `<link>`.
 
-<img alt="a screenshot of a window with the title 'My First VB4 Program' and two buttons OK and Cancel, styled like a Windows 98 dialog" src="https://github.com/jdan/98.css/blob/main/docs/window.png?raw=true" height="133"> <img alt="a magnified view showing pixel-perfect borders on a scrollbar and button element" src="https://github.com/jdan/98.css/blob/main/docs/zoom.png?raw=true?raw=true" height="133">
+Docs: https://dragunovartem99.github.io/99.css/
 
-98.css is a CSS file that takes semantic HTML and makes it look pretty. It does not ship with any JavaScript, so it is compatible with your frontend framework of choice.
+## Install
 
-Be sure to check out [XP.css](https://botoxparty.github.io/XP.css/) and [7.css](https://khang-nd.github.io/7.css/) as well.
+```sh
+npm install @dragunovartem99/99.css
+```
 
-### Installation / Usage
+```js
+import "@dragunovartem99/99.css";
+```
 
-The easiest way to use 98.css is to import it from [unpkg](https://unpkg.com/).
+## Modules
+
+Core (always needed): `tokens.css`, `fonts.css`, `base.css`.
+
+Components: `button.css`, `checkbox.css`, `radio.css`, `group-box.css`, `field-row.css`,
+`text-box.css`, `slider.css`, `dropdown.css`, `window.css`, `tree-view.css`, `tabs.css`,
+`table-view.css`, `progress.css`, `field-border.css`, `scrollbar.css`.
+
+```js
+import "@dragunovartem99/99.css/tokens.css";
+import "@dragunovartem99/99.css/fonts.css";
+import "@dragunovartem99/99.css/base.css";
+import "@dragunovartem99/99.css/window.css";
+```
+
+## Scaling
+
+```css
+:root {
+	--scale: 1.5;
+}
+```
+
+Size tokens resolve where they are declared, so to scale only a subtree, mark it with `data-scale`:
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>98.css example</title>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://unpkg.com/98.css" />
-</head>
-
-<body>
-  <div class="window" style="margin: 32px; width: 250px">
-    <div class="title-bar">
-      <div class="title-bar-text">
-        My First VB4 Program
-      </div>
-    </div>
-    <div class="window-body">
-      <p>Hello, world!</p>
-    </div>
-  </div>
-</body>
-</html>
+<div data-scale style="--scale: 2">...</div>
 ```
 
-Alternatively, you can grab 98.css for [the releases page](https://github.com/jdan/98.css/releases) or [npm](https://www.npmjs.com/package/98.css).
+Use `--px` (one scaled pixel) and `--border-width` (one crisp bevel line) in your own styles.
 
+## Development
+
+```sh
+npm run dev    # docs with live reload
+npm run build  # static docs into dist/
 ```
-npm install 98.css
-```
 
-Here is an example of [98.css being used with React](https://codesandbox.io/s/objective-chandrasekhar-t5t6h?file=/src/index.js), and [an example with vanilla JavaScript](https://codesandbox.io/s/late-sound-miqho?file=/index.html).
+## License
 
-Refer to the [documentation page](https://jdan.github.io/98.css/) for specific instructions on this library's components.
-
-### Developing
-
-First, run `npm install`.
-
-[`style.css`](https://github.com/jdan/98.css/blob/main/style.css) is where everything happens.
-
-You can use `npm start` to start a development environment that will watch for file changes and rebuild 98.css, reloading your browser in the process.
-
-You can run a build manually with `npm run build`. This will write to the `dist/` directory.
-
-### Issues, Contributing, etc.
-
-Refer to [the GitHub issues page](https://github.com/jdan/98.css/issues) to see bugs in my CSS or report new ones. I'd really like to see your pull requests (especially those new to open-source!) and will happily provide code review. 98.css is a fun, silly project and I'd like to make it a fun place to build your open-source muscle.
-
-Thank you for checking my little project out, I hope it brought you some joy today. Consider [starring/following along on GitHub](https://github.com/jdan/98.css/stargazers) and maybe reading my posts on [Bluesky](https://bsky.app/profile/jdan.me). 👋
-
-### Publishing
-
-Building the docs site: `npm run deploy:docs`
-
-Publishing to npm: `npm run release`
-
-### License
-
-[MIT](https://github.com/jdan/98.css/blob/main/LICENSE)
+MIT. Based on 98.css by Jordan Scales.

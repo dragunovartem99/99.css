@@ -6,12 +6,12 @@ body {
 
 main {
   width: 65rem;
-  margin-left: 240px;
+  margin-left: calc(240 * var(--px));
   margin-bottom: 60px;
 }
 
 aside {
-  width: 200px;
+  width: calc(200 * var(--px));
   position: fixed;
   top: 0;
   bottom: 0;

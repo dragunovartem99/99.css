@@ -1,0 +1,79 @@
+body {
+	font-family: Arial;
+	font-size: calc(12 * var(--px));
+	color: var(--text-color);
+}
+
+button,
+label,
+input,
+legend,
+textarea,
+select,
+option,
+table,
+ul.tree-view,
+.window,
+.title-bar,
+li[role="tab"] {
+	font-family: "Pixelated MS Sans Serif", Arial;
+	-webkit-font-smoothing: none;
+	font-size: calc(11 * var(--px));
+}
+
+h1 {
+	font-size: calc(5rem * var(--scale));
+}
+
+h2 {
+	font-size: calc(2.5rem * var(--scale));
+}
+
+h3 {
+	font-size: calc(2rem * var(--scale));
+}
+
+h4 {
+	font-size: calc(1.5rem * var(--scale));
+}
+
+u {
+	text-decoration: none;
+	border-bottom: calc(0.5 * var(--px)) solid var(--text-color);
+}
+
+a {
+	color: var(--link-blue);
+}
+
+a:focus {
+	outline: var(--border-width) dotted var(--link-blue);
+}
+
+pre {
+	display: block;
+	background: var(--button-highlight);
+	box-shadow: var(--border-field);
+	padding: calc(12 * var(--px)) calc(8 * var(--px));
+	margin: 0;
+}
+
+code,
+code * {
+	font-family: monospace;
+}
+
+summary:focus {
+	outline: var(--border-width) dotted #000000;
+}
+
+:disabled,
+:disabled + label,
+input[readonly],
+input[readonly] + label {
+	color: var(--button-shadow);
+}
+
+:disabled + label {
+	text-shadow: var(--border-width) var(--border-width) 0 var(--button-highlight);
+}

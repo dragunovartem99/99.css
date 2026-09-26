@@ -1,0 +1,52 @@
+input[type="radio"] {
+	appearance: none;
+	margin: 0;
+	background: 0;
+	position: fixed;
+	opacity: 0;
+	border: none;
+}
+
+input[type="radio"] + label {
+	position: relative;
+	margin-left: calc(var(--radio-width) + var(--radio-label-spacing));
+	line-height: calc(13 * var(--px));
+}
+
+input[type="radio"] + label::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: calc(-1 * (var(--radio-width) + var(--radio-label-spacing)));
+	display: inline-block;
+	width: var(--radio-width);
+	height: var(--radio-width);
+	background: url("./icon/radio-border.svg") center / 100% no-repeat;
+}
+
+input[type="radio"]:active + label::before,
+input[type="radio"][disabled] + label::before {
+	background-image: url("./icon/radio-border-disabled.svg");
+}
+
+input[type="radio"]:checked + label::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: calc((var(--radio-width) - var(--radio-dot-width)) / 2);
+	left: calc(
+		-1 * (var(--radio-width) + var(--radio-label-spacing)) +
+			(var(--radio-width) - var(--radio-dot-width)) / 2
+	);
+	width: var(--radio-dot-width);
+	height: var(--radio-dot-width);
+	background: url("./icon/radio-dot.svg") center / 100% no-repeat;
+}
+
+input[type="radio"][disabled]:checked + label::after {
+	background-image: url("./icon/radio-dot-disabled.svg");
+}
+
+input[type="radio"]:focus + label {
+	outline: var(--border-width) dotted #000000;
+}

@@ -1,0 +1,40 @@
+.sunken-panel {
+	box-sizing: border-box;
+	border: var(--b2) groove transparent;
+	border-image: url("./icon/sunken-panel-border.svg") 2;
+	overflow: auto;
+	background-color: #fff;
+}
+
+table {
+	border-collapse: collapse;
+	position: relative;
+	text-align: left;
+	white-space: nowrap;
+	background-color: #fff;
+}
+
+table > thead > tr > * {
+	position: sticky;
+	top: 0;
+	box-sizing: border-box;
+	height: calc(17 * var(--px));
+	padding: 0 var(--grouped-element-spacing);
+	font-weight: normal;
+	background: var(--surface);
+	box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+table > tbody > tr > * {
+	height: calc(14 * var(--px));
+	padding: 0 var(--grouped-element-spacing);
+}
+
+table.interactive > tbody > tr {
+	cursor: pointer;
+}
+
+table > tbody > tr.highlighted {
+	color: #fff;
+	background-color: var(--dialog-blue);
+}

@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+	width: calc(16 * var(--px));
+}
+
+::-webkit-scrollbar:horizontal {
+	height: calc(17 * var(--px));
+}
+
+::-webkit-scrollbar-corner {
+	background: var(--button-face);
+}
+
+::-webkit-scrollbar-track {
+	background-image: url("./icon/scrollbar-background.svg");
+	/* Keep the dither pattern on whole pixels */
+	background-size: var(--b2) var(--b2);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--button-face);
+	box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+	display: block;
+}
+
+::-webkit-scrollbar-button {
+	background-size: calc(16 * var(--px)) calc(17 * var(--px));
+}
+
+::-webkit-scrollbar-button:vertical:start {
+	height: calc(17 * var(--px));
+	background-image: url("./icon/button-up.svg");
+}
+
+::-webkit-scrollbar-button:vertical:end {
+	height: calc(17 * var(--px));
+	background-image: url("./icon/button-down.svg");
+}
+
+::-webkit-scrollbar-button:horizontal:start {
+	width: calc(16 * var(--px));
+	background-image: url("./icon/button-left.svg");
+}
+
+::-webkit-scrollbar-button:horizontal:end {
+	width: calc(16 * var(--px));
+	background-image: url("./icon/button-right.svg");
+}

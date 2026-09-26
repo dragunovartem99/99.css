@@ -1,0 +1,49 @@
+.window[role="tabpanel"] {
+	position: relative;
+	z-index: 2;
+}
+
+menu[role="tablist"] {
+	position: relative;
+	display: flex;
+	margin: 0 0 calc(-1 * var(--b2)) 0;
+	padding-left: calc(3 * var(--px));
+	text-indent: 0;
+	list-style-type: none;
+}
+
+menu[role="tablist"] > li {
+	border-top-left-radius: calc(3 * var(--px));
+	border-top-right-radius: calc(3 * var(--px));
+	box-shadow: var(--border-tab);
+	z-index: 1;
+}
+
+menu[role="tablist"] > li[aria-selected="true"] {
+	position: relative;
+	z-index: 8;
+	padding-bottom: var(--b2);
+	margin-top: calc(-1 * var(--b2));
+	margin-left: calc(-3 * var(--px));
+	background-color: var(--surface);
+}
+
+menu[role="tablist"] > li > a {
+	display: block;
+	color: #222;
+	margin: calc(6 * var(--px));
+	text-decoration: none;
+}
+
+menu[role="tablist"] > li > a:focus {
+	outline: var(--border-width) dotted #222;
+}
+
+menu[role="tablist"] > li[aria-selected="true"] > a:focus {
+	outline: none;
+}
+
+menu[role="tablist"].multirows > li {
+	flex-grow: 1;
+	text-align: center;
+}

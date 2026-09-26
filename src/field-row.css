@@ -1,0 +1,27 @@
+label {
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+}
+
+.field-row {
+	display: flex;
+	align-items: center;
+}
+
+[class^="field-row"] + [class^="field-row"] {
+	margin-top: var(--grouped-element-spacing);
+}
+
+.field-row > * + * {
+	margin-left: var(--grouped-element-spacing);
+}
+
+.field-row-stacked {
+	display: flex;
+	flex-direction: column;
+}
+
+.field-row-stacked * + * {
+	margin-top: var(--grouped-element-spacing);
+}

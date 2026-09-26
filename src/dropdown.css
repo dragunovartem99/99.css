@@ -1,0 +1,30 @@
+select {
+	box-sizing: border-box;
+	position: relative;
+	height: calc(21 * var(--px));
+	padding: calc(3 * var(--px)) calc(32 * var(--px)) calc(3 * var(--px)) calc(4 * var(--px));
+	border: none;
+	border-radius: 0;
+	box-shadow: var(--border-field);
+	background-color: var(--button-highlight);
+	background-image: url("./icon/button-down.svg");
+	background-position: top calc(2 * var(--px)) right calc(2 * var(--px));
+	background-size: calc(16 * var(--px)) calc(17 * var(--px));
+	background-repeat: no-repeat;
+	appearance: none;
+}
+
+select:focus {
+	outline: none;
+	color: var(--button-highlight);
+	background-color: var(--dialog-blue);
+}
+
+select:focus option {
+	color: #000;
+	background-color: #fff;
+}
+
+select:active {
+	background-image: url("./icon/button-down-active.svg");
+}

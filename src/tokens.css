@@ -1,0 +1,102 @@
+/**
+ * 99.css, based on 98.css
+ * Copyright (c) 2020 Jordan Scales <thatjdanisso.cool>
+ * https://github.com/dragunovartem99/99.css/blob/main/LICENSE
+ */
+
+:root {
+	--scale: 1;
+
+	/* Color */
+	--text-color: #222222;
+	--surface: #c0c0c0;
+	--button-highlight: #ffffff;
+	--button-face: #dfdfdf;
+	--button-shadow: #808080;
+	--window-frame: #0a0a0a;
+	--dialog-blue: #000080;
+	--dialog-blue-light: #1084d0;
+	--dialog-gray: #808080;
+	--dialog-gray-light: #b5b5b5;
+	--link-blue: #0000ff;
+}
+
+/*
+ * Size tokens resolve on the element that declares them, so they are
+ * redeclared on [data-scale] to let a subtree use its own --scale:
+ * <div data-scale style="--scale: 2">
+ */
+:root,
+[data-scale] {
+	/* One original pixel */
+	--px: calc(1px * var(--scale));
+	/* Bevel lines snap to whole pixels to stay crisp at fractional scales */
+	--border-width: max(1px, round(var(--px), 1px));
+
+	/* Spacing */
+	--element-spacing: calc(8 * var(--px));
+	--grouped-button-spacing: calc(4 * var(--px));
+	--grouped-element-spacing: calc(6 * var(--px));
+	--radio-width: calc(12 * var(--px));
+	--radio-dot-width: calc(4 * var(--px));
+	--checkbox-width: calc(13 * var(--px));
+	--checkmark-width: calc(7 * var(--px));
+	--radio-label-spacing: calc(6 * var(--px));
+	--range-spacing: calc(10 * var(--px));
+
+	/* Borders */
+	--b1: var(--border-width);
+	--b2: calc(2 * var(--border-width));
+	--b3: calc(3 * var(--border-width));
+	--border-raised-outer:
+		inset calc(-1 * var(--b1)) calc(-1 * var(--b1)) var(--window-frame),
+		inset var(--b1) var(--b1) var(--button-highlight);
+	--border-raised-inner:
+		inset calc(-1 * var(--b2)) calc(-1 * var(--b2)) var(--button-shadow),
+		inset var(--b2) var(--b2) var(--button-face);
+	--border-sunken-outer:
+		inset calc(-1 * var(--b1)) calc(-1 * var(--b1)) var(--button-highlight),
+		inset var(--b1) var(--b1) var(--window-frame);
+	--border-sunken-inner:
+		inset calc(-1 * var(--b2)) calc(-1 * var(--b2)) var(--button-face),
+		inset var(--b2) var(--b2) var(--button-shadow);
+	--default-button-border-raised-outer:
+		inset calc(-1 * var(--b2)) calc(-1 * var(--b2)) var(--window-frame),
+		inset var(--b1) var(--b1) var(--window-frame);
+	--default-button-border-raised-inner:
+		inset var(--b2) var(--b2) var(--button-highlight),
+		inset calc(-1 * var(--b3)) calc(-1 * var(--b3)) var(--button-shadow),
+		inset var(--b3) var(--b3) var(--button-face);
+	--default-button-border-sunken-outer:
+		inset var(--b2) var(--b2) var(--window-frame),
+		inset calc(-1 * var(--b1)) calc(-1 * var(--b1)) var(--window-frame);
+	--default-button-border-sunken-inner:
+		inset calc(-1 * var(--b2)) calc(-1 * var(--b2)) var(--button-highlight),
+		inset var(--b3) var(--b3) var(--button-shadow),
+		inset calc(-1 * var(--b3)) calc(-1 * var(--b3)) var(--button-face);
+
+	/* Window borders flip button-face and button-highlight */
+	--border-window-outer:
+		inset calc(-1 * var(--b1)) calc(-1 * var(--b1)) var(--window-frame),
+		inset var(--b1) var(--b1) var(--button-face);
+	--border-window-inner:
+		inset calc(-1 * var(--b2)) calc(-1 * var(--b2)) var(--button-shadow),
+		inset var(--b2) var(--b2) var(--button-highlight);
+
+	/* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
+	--border-field:
+		inset calc(-1 * var(--b1)) calc(-1 * var(--b1)) var(--button-highlight),
+		inset var(--b1) var(--b1) var(--button-shadow),
+		inset calc(-1 * var(--b2)) calc(-1 * var(--b2)) var(--button-face),
+		inset var(--b2) var(--b2) var(--window-frame);
+	--border-status-field:
+		inset calc(-1 * var(--b1)) calc(-1 * var(--b1)) var(--button-face),
+		inset var(--b1) var(--b1) var(--button-shadow);
+
+	/* Tabs */
+	--border-tab:
+		inset calc(-1 * var(--b1)) 0 var(--window-frame),
+		inset var(--b1) var(--b1) var(--button-face),
+		inset calc(-1 * var(--b2)) 0 var(--button-shadow),
+		inset var(--b2) var(--b2) var(--button-highlight);
+}

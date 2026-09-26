@@ -1,0 +1,11 @@
+fieldset {
+	border: var(--b2) solid transparent;
+	border-image: url("./icon/groupbox-border.svg") 2;
+	padding: calc(var(--b2) + var(--element-spacing));
+	padding-block-start: var(--element-spacing);
+	margin: 0;
+}
+
+legend {
+	background: var(--surface);
+}

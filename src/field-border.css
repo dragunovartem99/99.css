@@ -1,0 +1,17 @@
+.field-border {
+	background: var(--button-highlight);
+	box-shadow: var(--border-field);
+	padding: calc(2 * var(--px));
+}
+
+.field-border-disabled {
+	background: var(--surface);
+	box-shadow: var(--border-field);
+	padding: calc(2 * var(--px));
+}
+
+.status-field-border {
+	background: var(--surface);
+	box-shadow: var(--border-status-field);
+	padding: var(--px);
+}
