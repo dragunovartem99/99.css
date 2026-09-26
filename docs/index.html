@@ -124,7 +124,7 @@ import "99.css/window.css";</code></pre>
     <h3 id="scaling">Scaling</h3>
     <p>
       Every size is a multiple of <code>--px</code>, which is <code>1px * var(--scale)</code>.
-      Bevel lines are rounded to whole pixels, so borders stay crisp at fractional scales.
+      Bevel lines are rounded down to whole pixels, so borders stay crisp at fractional scales.
       Integer scales look best with the pixel font.
     </p>
     <pre style="max-width: calc(440 * var(--px))"><code>:root {

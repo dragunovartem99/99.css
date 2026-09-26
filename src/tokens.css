@@ -30,8 +30,8 @@
 [data-scale] {
 	/* One original pixel */
 	--px: calc(1px * var(--scale));
-	/* Bevel lines snap to whole pixels to stay crisp at fractional scales */
-	--border-width: max(1px, round(var(--px), 1px));
+	/* Bevel lines snap down to whole pixels: thin and crisp at fractional scales */
+	--border-width: max(1px, round(down, var(--px), 1px));
 
 	/* Spacing */
 	--element-spacing: calc(8 * var(--px));
