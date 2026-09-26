@@ -56,6 +56,6 @@ npm run dev    # docs with live reload
 npm run build  # static docs into dist/
 ```
 
-## License
+Pull requests build the docs. Merging to `main` deploys them to GitHub Pages and, with a pending
+changeset (`npx changeset`), opens a release PR that publishes to npm once merged
 
-MIT. Based on 98.css by Jordan Scales.
