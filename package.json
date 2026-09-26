@@ -1,6 +1,6 @@
 {
-	"name": "@dragunovartem99/99.css",
-	"version": "0.1.0",
+	"name": "99.css",
+	"version": "0.3.0",
 	"description": "Modular, scalable 98.css: a design system for building faithful recreations of old UIs",
 	"license": "MIT",
 	"type": "module",

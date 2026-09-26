@@ -11,11 +11,11 @@ Docs: https://dragunovartem99.github.io/99.css/
 ## Install
 
 ```sh
-npm install @dragunovartem99/99.css
+npm install 99.css
 ```
 
 ```js
-import "@dragunovartem99/99.css";
+import "99.css";
 ```
 
 ## Modules
@@ -27,10 +27,10 @@ Components: `button.css`, `checkbox.css`, `radio.css`, `group-box.css`, `field-r
 `table-view.css`, `progress.css`, `field-border.css`, `scrollbar.css`.
 
 ```js
-import "@dragunovartem99/99.css/tokens.css";
-import "@dragunovartem99/99.css/fonts.css";
-import "@dragunovartem99/99.css/base.css";
-import "@dragunovartem99/99.css/window.css";
+import "99.css/tokens.css";
+import "99.css/fonts.css";
+import "99.css/base.css";
+import "99.css/window.css";
 ```
 
 ## Scaling
